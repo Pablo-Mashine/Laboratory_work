@@ -5,13 +5,13 @@ increase = 0.05  # Ежемесячный рост цен
 
 # TODO Посчитайте количество  месяцев, которое можно протянуть без долгов
 
-count = 0
-money_capital = money_capital - (spend - salary)
-count += 1
-while spend <= money_capital + salary:
-    spend *= (1+increase)
-    money_capital = money_capital - (spend - salary)
-    count+=1
+count = 0 # Делаем счетчик месяцев
+money_capital = money_capital - (spend - salary) #остаток капитала в первый месяц т.к. еще нету повышения цены
+count += 1 # Увеличиваем счетчик на 1 т.к. месяц прошел
+while spend <= money_capital + salary: # Цикл расчета оставшихся месяцев
+    spend *= (1+increase) # Повышение расходов на 5% согласно условию
+    money_capital = money_capital - (spend - salary) # Ежемесячное уменьшение капитала
+    count+=1 # Счетчик числа месяцев
 
 
 
