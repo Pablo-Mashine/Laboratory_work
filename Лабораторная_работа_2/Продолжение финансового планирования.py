@@ -5,10 +5,10 @@ increase = 0.03  # Ежемесячный рост цен
 
 # TODO Рассчитайте подушку безопасности, чтобы протянуть 10 месяцев без долгов
 
-money_capital = spend - salary
-for i in range(months-1):
-    spend *= (1+increase)
-    money_capital += spend - salary
+money_capital = spend - salary # Подушка безопасности в первый месяц т.к. еще не было повышения цен
+for i in range(months-1): # Цикл расчета подушки безопасности без первого месяца т.к. он уже учтен выше
+    spend *= (1+increase) # Увеличение цены согласно условию
+    money_capital += spend - salary # Необходимое увеличение подушки безопасности
 
 
 
